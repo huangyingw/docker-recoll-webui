@@ -1,7 +1,9 @@
 FROM debian:jessie
 MAINTAINER Jivan Kulkarni <jivank@gmail.com>
 
-RUN echo $'deb http://www.lesbonscomptes.com/recoll/debian/ unstable main\ndeb-src http://www.lesbonscomptes.com/recoll/debian/ unstable main' > \
+RUN echo deb http://www.lesbonscomptes.com/recoll/debian/ unstable main > \
+	/etc/apt/sources.list.d/recoll.list
+	echo deb-src http://www.lesbonscomptes.com/recoll/debian/ unstable main >> \
 	/etc/apt/sources.list.d/recoll.list
 
 RUN apt-get update && \
