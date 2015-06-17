@@ -1,3 +1,3 @@
 #!/bin/bash
-bash /root/bgindex.sh &
-python /recoll-webui/webui-standalone.py
+/bin/bash /root/bgindex.sh &
+/usr/bin/python /recoll-webui/webui-standalone.py
