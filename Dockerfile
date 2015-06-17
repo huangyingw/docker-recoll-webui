@@ -21,4 +21,5 @@ ADD bgindex.sh /root/
 VOLUME /data
 EXPOSE 8080
 
-CMD ["/bin/bash","/root/start.sh"]
+RUN chmod +x /root/start.sh && /root/bgindex.sh
+CMD ["/root/start.sh"]
