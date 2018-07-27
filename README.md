@@ -14,9 +14,10 @@ To check detailed features for <i>Recoll</i> check out : http://www.lesbonscompt
 This container will pull Debian Jessie, download Recoll source.list, then install all the needed dependencies. It will also pull the front end for this container, which is located at https://github.com/koniu/recoll-webui
 
 <b>How to install</b>
-1. Download the files to your computer, extract to a folder of choice, enter this folder
-2. In terminal run `.start-container /path/to/your/local/collection/of/data` to start the created container
-3. Access the docker-recoll-webui frontend at this address [http://172.17.0.2:8080](http://172.17.0.2:8080) if this is the only container you run.
+1. Download the file `.start-container` to your computer
+2. Make this file executable, on Linux `chmod u+x .start-container`
+3. In terminal run `.start-container /path/to/your/local/collection/of/data` to start the created container
+4. Access the docker-recoll-webui frontend at this address [http://172.17.0.2:8080](http://172.17.0.2:8080) if this is the only container you run.
    If you have more, you can get it's IP address by running ``docker inspect docker-recoll-webui | grep "IPAddress"``
 
 Note on using the frontend: 
