@@ -1,6 +1,6 @@
 #!/bin/bash
-docker build --label recoll-webui --tag recoll-webui .
+docker build --label docker-recoll-webui --tag docker-recoll-webui .
 
 #The passed parameter to this script should be the TOP path to your local collection of data. 
 #This will pe passed on to docker, and the volume will be connected to the local mount-point
-docker run -d --mount src=$1,target=/data,type=bind recoll-webui
+docker run -d --mount src=$1,target=/data,type=bind docker-recoll-webui
