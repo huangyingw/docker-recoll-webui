@@ -1,9 +1,8 @@
-=====================
-**docker-recoll-webui
+
+docker-recoll-webui
 =====================
 
 **Recoll
-========
 
 it finds keywords inside documents as well as file names.
 Project home : http://www.lesbonscomptes.com/recoll
