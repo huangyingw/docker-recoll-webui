@@ -17,7 +17,7 @@ This container will pull Debian Jessie, download Recoll source.list, then instal
 <b>How to install</b>
 1. Download the file `container-build.sh` to your computer. 
 
-   On *Linux* `https://github.com/viktor-c/docker-recoll-webui/blob/master/container-build.sh`   
+   On *Linux* `wget https://raw.githubusercontent.com/viktor-c/docker-recoll-webui/master/container-build.sh`   
 2. Make this file executable
 
    On *Linux* `chmod u+x container-build.sh`
