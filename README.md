@@ -1,8 +1,9 @@
 
 docker-recoll-webui
-=====================
+===================
 
-**Recoll
+
+**Recoll**
 
 it finds keywords inside documents as well as file names.
 Project home : http://www.lesbonscomptes.com/recoll
@@ -15,6 +16,7 @@ This container will pull Debian Jessie, download Recoll source.list, then instal
 <b>How to install</b>
 1. Download the files to your computer, extract to a folder of choice, enter this folder
 2. In terminal run `.start-container /path/to/your/local/collection/of/data` to start the created container
-3. Access the docker-recoll-webui frontend at this address [http://172.17.0.2:8080] if this is the only container you run. If you have more, you can get it's IP address by running `docker inspect docker-recoll-webui | grep "IPAddress"
+3. Access the docker-recoll-webui frontend at this address [http://172.17.0.2:8080] if this is the only container you run.
+   If you have more, you can get it's IP address by running ``docker inspect docker-recoll-webui | grep "IPAddress"``
 
 Note on using the frontend: If you want to open a file in your browser after a successful query you might notice that the URL is incomplete. Check out the <i>settings</i> on the webpage from the container, here you can set the full path from your computer, which you
