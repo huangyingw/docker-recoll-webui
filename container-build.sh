@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [[ $# -eq 0 ]] ; then
-    echo 'USAGE: container-build.sh /full/path/to/your/data/collection'
+    echo 'USAGE: ./container-build.sh /full/path/to/your/data/collection'
+    echo 'Nothing was done. Please provide your Path'
     exit 0
 fi
 
