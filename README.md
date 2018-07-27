@@ -29,7 +29,8 @@ This container will pull Debian Jessie, download Recoll source.list, then instal
 =========
 
 1. Note on using the frontend: 
-If you want to open a file in your browser after a successful query you might notice that the URL is incomplete. Check out the **settings** on the webpage from the container, here you can set the full path from your computer
-   The format ist `file:///path/to/your/local/collection/of/data`
+If you want to open a file in your browser after a successful query you might notice that the URL is incomplete. Check out the **settings** on the webpage from the container, here you can set the full path from your computer.
+   
+   The format you should use is `file:///path/to/your/local/collection/of/data`
 2. Even if you set this path, opening files in your browser might not work. This is a safety issue in Firefox, Chrome, Opera. You cannot open local files from a remove website. To workaround this, please check out the recoll-webui Readme [https://github.com/koniu/recoll-webui#opening-files-via-local-links]
 3. On the first run of recoll in the collection folder it will also index the files. It can take more or less time, depending on where the files are located and how big the collection is.
