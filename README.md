@@ -17,9 +17,10 @@ This container will pull Debian Jessie, download Recoll source.list, then instal
 <b>How to install</b>
 1. Download the file `container-build.sh` to your computer. 
 
-   On *Linux* `wget https://github.com/viktor-c/docker-recoll-webui/container-build.sh`
-   
-2. Make this file executable, on Linux `chmod u+x container-build.sh`
+   On *Linux* `wget https://github.com/viktor-c/docker-recoll-webui/container-build.sh`   
+2. Make this file executable
+
+   On *Linux* `chmod u+x container-build.sh`
 3. In terminal run `.start-container /path/to/your/local/collection/of/data` to start the created container
 4. Access the docker-recoll-webui frontend at this address [http://172.17.0.2:8080](http://172.17.0.2:8080) if this is the only container you run.
    If you have more, you can get it's IP address by running ``docker inspect docker-recoll-webui | grep "IPAddress"``
