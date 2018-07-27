@@ -1,7 +1,6 @@
 #!/bin/bash
+docker build --label recoll-webui --tag recoll-webui .
 
-#here a variable will be set. It should be the TOP path to your local collection of data. 
+#The passed parameter to this script should be the TOP path to your local collection of data. 
 #This will pe passed on to docker, and the volume will be connected to the local mount-point
-EXPORT LOCALTOPDIR = "/home/YOURUSER/Documents/recoll/dataexamplepath"
-
-docker run -d --mount src=$LOCALTOPDIR,target=/data,type=bind recoll-webui
+docker run -d --mount src=$1,target=/data,type=bind recoll-webui
