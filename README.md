@@ -15,11 +15,13 @@ To check detailed features for <i>Recoll</i> check out : http://www.lesbonscompt
 This container will pull Debian Jessie, download Recoll source.list, then install all the needed dependencies. It will also pull the front end for this container, which is located at https://github.com/koniu/recoll-webui
 
 <b>How to install</b>
-1. Download the file `container-build.sh` to your computer. 
+1. Clone this project to your computer. 
 
-   On *Linux* `wget https://raw.githubusercontent.com/viktor-c/docker-recoll-webui/master/container-build.sh`   
+   On *Linux* `git clone https://raw.githubusercontent.com/viktor-c`
+2. Edit the file recoll.conf 
+
+   For *huge amount* of info about what options are possible check out *The Manual* [https://www.lesbonscomptes.com/recoll/usermanual/webhelp/docs/RCL.INSTALL.CONFIG.RECOLLCONF.html].
 2. Make this file executable
-
    On *Linux* `chmod u+x container-build.sh`
 3. In terminal run `container-build.sh /path/to/your/local/collection/of/data` to build, then start the created container
 4. Access the docker-recoll-webui frontend at this address [http://172.17.0.2:8080](http://172.17.0.2:8080) if this is the only container you run.
