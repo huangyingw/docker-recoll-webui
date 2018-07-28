@@ -16,8 +16,8 @@ RUN mkdir /data && mkdir /root/.recoll
 ADD recoll.conf /root/.recoll/
 
 RUN git clone https://github.com/koniu/recoll-webui.git
-ADD start.sh /root/
-ADD bgindex.sh /root/
+ADD scripts/start.sh /root/
+ADD scripts/bgindex.sh /root/
 
 VOLUME /data
 EXPOSE 8080
