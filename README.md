@@ -17,7 +17,7 @@ This container will pull Debian Jessie, download Recoll source.list, then instal
 <b>How to install</b>
 1. Clone this project to your computer. 
 
-   On *Linux* `git clone https://raw.githubusercontent.com/viktor-c`
+   On *Linux* `git clone https://github.com/viktor-c/docker-recoll-webui`
 2. Edit the file recoll.conf 
 
    For *huge amount* of info about what options are possible check out *The Manual* [https://www.lesbonscomptes.com/recoll/usermanual/webhelp/docs/RCL.INSTALL.CONFIG.RECOLLCONF.html].
