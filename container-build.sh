@@ -12,4 +12,4 @@ docker build --label docker-recoll-webui --tag docker-recoll-webui https://githu
 #This will pe passed on to docker, and the volume will be connected to the local mount-point
 FULL_PATH=$(readlink -f $1)
 echo "The path for the collection is " $FULL_PATH
-docker run -d --mount src=$FULL_PATH,target=/data,type=bind docker-recoll-webui
+docker run -d --name docker-recoll-webui --mount src=$FULL_PATH,target=/data,type=bind docker-recoll-webui
