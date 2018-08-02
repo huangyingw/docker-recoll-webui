@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "Move recoll files"
-cp /opt/install/bgindex.sh /usr/local/bin/bgindex.sh
-chmod a+x /usr/local/bin/bgindex.sh
-
-cp /opt/install/startrecoll.sh /usr/local/bin/startrecoll.sh
-chmod a+x /usr/local/bin/startrecoll.sh
