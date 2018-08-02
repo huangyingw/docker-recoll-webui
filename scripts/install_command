@@ -1,0 +1,36 @@
+#!/bin/bash
+echo "pdf2pdfocr files will be copied"
+cp /opt/install/pdf2pdfocr.py /opt/install/pdf2pdfocr_multibackground.py /usr/local/bin
+
+echo "Moving files necessary for Folder monitoring"
+echo root >> /etc/incron.allow
+echo docker >> /etc/incron.allow
+incrontab -u docker /opt/install/incrontabroot
+
+#create pdf2pdfocr script
+cp /opt/install/pdf2pdfocr.sh /usr/local/bin/pdf2pdfocr.sh
+cp /opt/install/pdf2pdfocr_multibackground.py /usr/local/bin/pdf2pdfocr_multibackground.py
+chmod a+x /usr/local/bin/pdf2pdfocr.sh
+chmod a+x /usr/local/bin/pdf2pdfocr_multibackground.py
+
+#my script for tagging pdf files
+#same folder as pdf2pdfocr
+echo "Moving my script for ocr- and tagging pdf file names"
+cp /opt/install/v-ocr-tagspaces-1.1.py /usr/local/bin/v-ocr-tagspaces-1.1.py 
+cp /opt/install/v-ocr-tagspaces.sh /usr/local/bin/v-ocr-tagspaces.sh
+cp /opt/install/vkeywords.txt /usr/local/bin/vkeywords.txt
+cp /opt/install/vscankeys.log /usr/local/bin/vscankeys.log
+chmod a+x /usr/local/bin/v-ocr-tagspaces-1.1.py
+chmod a+x /usr/local/bin/v-ocr-tagspaces.sh
+ln -s /usr/local/bin/v-ocr-tagspaces-1.1.py /usr/local/bin/v-ocr-tagspaces.py
+
+
+echo "Move on to recoll files"
+cp /opt/install/bgindex.sh /usr/local/bin/bgindex.sh
+chmod a+x /usr/local/bin/bgindex.sh
+cp /opt/install/startrecoll.sh /usr/local/bin/startrecoll.sh
+chmod a+x /usr/local/bin/startrecoll.sh
+
+#docker index should be on the data volume in .recoll folder. Since this is external volume, we should not copy anything over it
+#mkdir /home/docker/.recoll/
+#cp /opt/install/recoll.conf /home/docker/.recoll/recoll.conf
