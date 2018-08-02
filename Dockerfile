@@ -33,11 +33,9 @@ RUN apt-get update && \
 
 RUN git clone https://github.com/viktor-c/recoll-webui.git -b viktor /home/docker/recoll-webui/
 
-# copy all the scripts [Start]
-COPY ./scripts/ /opt/install
-# install the scripts
-RUN /opt/install/install_command
-# copy all the scripts [End]
+# Move recoll files
+COPY .scripts/bgindex.sh /usr/local/bin/bgindex.sh
+COPY .scripts/startrecoll.sh /usr/local/bin/startrecoll.sh
 
 USER docker
 COPY recoll.conf /home/docker/data/.recoll/
