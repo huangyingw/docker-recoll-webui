@@ -3,6 +3,12 @@ MAINTAINER Victor <victor@me.com>
 
 RUN adduser --disabled-password docker
 
+VOLUME /home/docker/data
+EXPOSE 8080
+
+#this should be picked up by recollindex
+ENV RECOLL_CONFDIR /home/docker/data/.recoll 
+
 RUN echo deb http://www.lesbonscomptes.com/recoll/debian/ unstable main > \
 	/etc/apt/sources.list.d/recoll.list
 
@@ -21,8 +27,7 @@ RUN git clone https://github.com/koniu/recoll-webui.git
 ADD scripts/start.sh /root/
 ADD scripts/bgindex.sh /root/
 
-VOLUME /home/docker/data
-EXPOSE 8080
+
 
 RUN chmod +x /root/start.sh && chmod +x /root/bgindex.sh
 CMD ["/root/start.sh"]
