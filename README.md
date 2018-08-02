@@ -22,10 +22,12 @@ This container will pull Debian Jessie, download Recoll source.list, then instal
 
    For *huge amount* of info about what options are possible check out *The Manual* [https://www.lesbonscomptes.com/recoll/usermanual/webhelp/docs/RCL.INSTALL.CONFIG.RECOLLCONF.html].
 2. Make this file executable
-   On *Linux* `chmod u+x container-build.sh`
-3. In terminal run `container-build.sh /path/to/your/local/collection/of/data` to build, then start the created container
-4. Access the docker-recoll-webui frontend at this address [http://172.17.0.2:8080](http://172.17.0.2:8080) if this is the only container you run.
-   If you have more, you can get it's IP address by running ``docker inspect docker-recoll-webui | grep "IPAddress"``
+   On *Linux* `chmod u+x container.sh`
+3. In terminal run `./container.sh build` to build the image, then start the created container. 
+4. The start you container with `./container.sh start /path/to/your/local/collection/of/data` or `./container.sh start`, in the latter form it will pick up the default path from inside *container.sh* file
+   Both commands will return the *container id* and the *IP-Address* where you can find recoll-webui
+4. Access the docker-recoll-webui frontend by clicking the link or copying the IP-Adress
+   
 
 **Notes**
 =========
