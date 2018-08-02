@@ -1,5 +1,7 @@
 FROM debian:jessie
-MAINTAINER Jivan Kulkarni <jivank@gmail.com>
+MAINTAINER Victor <victor@me.com>
+
+RUN adduser --disabled-password docker
 
 RUN echo deb http://www.lesbonscomptes.com/recoll/debian/ unstable main > \
 	/etc/apt/sources.list.d/recoll.list
