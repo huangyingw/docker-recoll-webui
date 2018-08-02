@@ -35,7 +35,7 @@ RUN git clone https://github.com/viktor-c/recoll-webui.git -b viktor /home/docke
 
 # Move recoll files
 #bgindex.sh and startrecoll.sh
-COPY .scripts/ /usr/local/bin/
+COPY scripts/ /usr/local/bin/
 RUN chmod +x /usr/local/bin/startrecoll.sh && chmod +x /usr/local/bin//bgindex.sh
 
 USER docker
