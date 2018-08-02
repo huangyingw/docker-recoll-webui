@@ -21,7 +21,7 @@ RUN git clone https://github.com/koniu/recoll-webui.git
 ADD scripts/start.sh /root/
 ADD scripts/bgindex.sh /root/
 
-VOLUME /data
+VOLUME /home/docker/data
 EXPOSE 8080
 
 RUN chmod +x /root/start.sh && chmod +x /root/bgindex.sh
