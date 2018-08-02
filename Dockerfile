@@ -29,15 +29,16 @@ RUN apt-get update && \
     apt-get install -y --force-yes recoll python-recoll python git wv poppler-utils && \
     apt-get clean
 
-RUN mkdir /data && mkdir /root/.recoll
-#RUN echo topdirs = /data >> /root/.recoll/recoll.conf
-ADD recoll.conf /root/.recoll/
-
-RUN git clone https://github.com/koniu/recoll-webui.git
-ADD scripts/start.sh /root/
-ADD scripts/bgindex.sh /root/
 
 
+RUN git clone https://github.com/viktor-c/recoll-webui.git -b viktor /home/docker/recoll-webui/
 
-RUN chmod +x /root/start.sh && chmod +x /root/bgindex.sh
-CMD ["/root/start.sh"]
+# copy all the scripts [Start]
+COPY ./scripts/ /opt/install
+# install the scripts
+RUN /opt/install/install_command
+# copy all the scripts [End]
+
+USER docker
+COPY recoll.conf /home/docker/data/.recoll/
+CMD ["/usr/local/bin/startrecoll.sh"]
