@@ -16,6 +16,16 @@ RUN echo deb-src http://www.lesbonscomptes.com/recoll/debian/ unstable main >> \
 	/etc/apt/sources.list.d/recoll.list
 
 RUN apt-get update && \
+	apt-get install -y --force-yes locales
+# Set the locale
+#http://jaredmarkell.com/docker-and-locales/
+RUN locale-gen de_DE.UTF-8  
+ENV LANG de_DE.UTF-8  
+ENV LANGUAGE de_DE:de
+ENV LC_ALL de_DE.UTF-8 
+
+
+RUN apt-get update && \
     apt-get install -y --force-yes recoll python-recoll python git wv poppler-utils && \
     apt-get clean
 
