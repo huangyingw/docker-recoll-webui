@@ -27,6 +27,8 @@ ENV LC_ALL de_DE.UTF-8
 
 RUN apt-get update && \
     apt-get install -y --force-yes recoll python-recoll python git wv poppler-utils && \
+    #install german language pack for aspell
+    apt-get install -y --force-yes aspell-de && \
     apt-get clean
 
 
