@@ -19,7 +19,9 @@ RUN apt-get update && \
 	apt-get install -y --force-yes locales
 # Set the locale
 #http://jaredmarkell.com/docker-and-locales/
-RUN locale-gen de_DE.UTF-8  
+#https://stackoverflow.com/questions/28405902/how-to-set-the-locale-inside-a-ubuntu-docker-container
+RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen && \
+    locale-gen de_DE.UTF-8  
 ENV LANG de_DE.UTF-8  
 ENV LANGUAGE de_DE:de
 ENV LC_ALL de_DE.UTF-8 
