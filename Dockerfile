@@ -1,6 +1,8 @@
 FROM debian:jessie
 MAINTAINER Jivan Kulkarni <jivank@gmail.com>
 
+RUN apt-get update && apt-get install -y --force-yes apt-transport-https ca-certificates
+
 RUN echo deb http://www.lesbonscomptes.com/recoll/debian/ unstable main > \
 	/etc/apt/sources.list.d/recoll.list
 
