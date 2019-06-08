@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+    recoll-webui:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: huangyingw/docker-recoll-webui-pdfocr
+        volumes:
+            - ~/myproject/git/AI/coursera/coursera-dl/coursera-dl/:/data/
+        ports:
+            - '8080:8080'
