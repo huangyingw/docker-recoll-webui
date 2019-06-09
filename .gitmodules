@@ -1,0 +1,3 @@
+[submodule "recoll-webui"]
+	path = recoll-webui
+	url = https://github.com/koniu/recoll-webui.git
