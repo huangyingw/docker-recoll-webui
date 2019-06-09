@@ -4,6 +4,7 @@
 "./Dockerfile"
 "./README.md"
 "./bgindex.sh"
+"./docker-compose.yml"
 "./includefile.conf"
 "./prunefile.conf"
 "./prunefix.conf"
