@@ -8,6 +8,7 @@
 "./README.md"
 "./bgindex.sh"
 "./docker-compose.yml"
+"./fav.log.sort"
 "./includefile.conf"
 "./prunefile.conf"
 "./prunefix.conf"
