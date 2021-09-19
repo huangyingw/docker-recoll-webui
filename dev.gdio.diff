@@ -22,7 +22,7 @@ index 92ac2b1..9efddf7 100644
  
 diff --git a/docker-compose.yml b/docker-compose.yml
 new file mode 100644
-index 0000000..746ca4b
+index 0000000..cb0bb7d
 --- /dev/null
 +++ ./docker-compose.yml
 @@ -0,0 +1,12 @@
@@ -35,7 +35,7 @@ index 0000000..746ca4b
 +            dockerfile: Dockerfile
 +        image: huangyingw/docker-recoll-webui-pdfocr
 +        volumes:
-+            - ~/myproject/git/AI/coursera/coursera-dl/coursera-dl/:/data/
++            - ~/myproject/git/AI/coursera/deeplearning.ai/:/data/
 +        ports:
 +            - '8080:8080'
 diff --git a/recoll-webui b/recoll-webui
