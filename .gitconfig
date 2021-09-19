@@ -8,7 +8,7 @@
     remote = github
 [gsync]
     remote = origin
-    branch = master
+    target = origin/master
 [merge]
 	allow = true
 [branch "dev"]
