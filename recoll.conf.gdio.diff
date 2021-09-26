@@ -1,0 +1,74 @@
+diff --git a/.gitmodules b/.gitmodules
+new file mode 100644
+index 0000000..9699fe5
+--- /dev/null
++++ ./.gitmodules
+@@ -0,0 +1,3 @@
++[submodule "recoll-webui"]
++	path = recoll-webui
++	url = https://github.com/koniu/recoll-webui.git
+diff --git a/Dockerfile b/Dockerfile
+index 92ac2b1..075fad0 100644
+--- ./Dockerfile
++++ ./Dockerfile
+@@ -1,6 +1,8 @@
+ FROM debian:jessie
+ MAINTAINER Jivan Kulkarni <jivank@gmail.com>
+ 
++RUN apt-get update && apt-get install -y --force-yes apt-transport-https ca-certificates
++
+ RUN echo deb http://www.lesbonscomptes.com/recoll/debian/ unstable main > \
+ 	/etc/apt/sources.list.d/recoll.list
+ 
+@@ -12,7 +14,7 @@ RUN apt-get update && \
+     apt-get clean
+ 
+ RUN mkdir /data && mkdir /root/.recoll
+-RUN echo topdirs = /data >> /root/.recoll/recoll.conf
++ADD recoll.conf /root/.recoll/recoll.conf 
+ 
+ RUN git clone https://github.com/koniu/recoll-webui.git
+ ADD start.sh /root/
+diff --git a/docker-compose.yml b/docker-compose.yml
+new file mode 100644
+index 0000000..d24ae2e
+--- /dev/null
++++ ./docker-compose.yml
+@@ -0,0 +1,12 @@
++version: '2.1'
++
++services:
++    recoll-webui:
++        build:
++            context: .
++            dockerfile: Dockerfile
++        image: huangyingw/docker-recoll-webui-pdfocr
++        volumes:
++            - ~/myproject/git/bible/mlove4u/passages/:/data/
++        ports:
++            - '8080:8080'
+diff --git a/recoll-webui b/recoll-webui
+new file mode 160000
+index 0000000..c3151ab
+--- /dev/null
++++ ./recoll-webui
+@@ -0,0 +1 @@
++Subproject commit c3151abc2b4416fb4a63b7833b8c99d17e3ace6e
+diff --git a/recoll.conf b/recoll.conf
+new file mode 100644
+index 0000000..7501e0f
+--- /dev/null
++++ ./recoll.conf
+@@ -0,0 +1,12 @@
++# The system-wide configuration files for recoll are located in:
++#   /opt/local/share/recoll/examples
++# The default configuration files are commented, you should take a look
++# at them for an explanation of what can be set (you could also take a look
++# at the manual instead).
++# Values set in this file will override the system-wide values for the file
++# with the same name in the central directory. The syntax for setting
++# values is identical.
++
++topdirs = /data
++skippedNames+ = *.doc *.py *.zh-CN.srt *_exam.html *findresult
++skippedPaths = 
