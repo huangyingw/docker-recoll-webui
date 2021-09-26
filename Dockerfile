@@ -14,7 +14,7 @@ RUN apt-get update && \
     apt-get clean
 
 RUN mkdir /data && mkdir /root/.recoll
-RUN echo topdirs = /data >> /root/.recoll/recoll.conf
+ADD recoll.conf /root/.recoll/recoll.conf 
 
 RUN git clone https://github.com/koniu/recoll-webui.git
 ADD start.sh /root/
