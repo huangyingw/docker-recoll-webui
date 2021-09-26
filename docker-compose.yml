@@ -7,6 +7,6 @@ services:
             dockerfile: Dockerfile
         image: huangyingw/docker-recoll-webui-pdfocr
         volumes:
-            - ~/myproject/git/AI/coursera/deeplearning.ai/:/data/
+            - ~/myproject/git/bible/mlove4u/passages/:/data/
         ports:
             - '8080:8080'
